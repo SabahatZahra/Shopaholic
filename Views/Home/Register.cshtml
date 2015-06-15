@@ -1,0 +1,91 @@
+﻿@model Shopaholics.Models.Customer
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<body >
+     <h2 > Register</h2 >
+    <p style ="text-align: center;">
+        <span style="line-height: 1.3em;">
+            Register yourself to get notified of our discount offers and deals
+            </span>
+            </p>
+            <div id="nav">
+                @*@using (Html.BeginForm("Register1","Home", FormMethod.Get))
+                { 
+                    @Html.ValidationSummary(true)
+                
+                    <br>
+                     @Html.HiddenFor(m => m.Id)
+
+                     @Html.LabelFor(m => m.Name)
+                     @Html.TextBoxFor(m => m.Name)
+                    @Html.ValidationMessageFor(m => m.Name)
+                    <br />
+                    
+                    @Html.LabelFor(m => m.Email)
+                    @Html.TextBoxFor(m => m.Email)
+                    @Html.ValidationMessageFor(m => m.Email)
+                    <br />
+                    
+                    @Html.LabelFor(m => m.Password)
+                    @Html.PasswordFor(m => m.Password)
+                    @Html.ValidationMessageFor(m => m.Password)
+                    <br />
+                    
+                    @Html.LabelFor(m => m.ConfirmPassword)
+                    @Html.PasswordFor(m => m.ConfirmPassword)
+                    @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                    <br />
+                    
+                    
+                    <button type="submit">Register</button>
+                
+                }*@
+
+                <form method=GET action="../Home/Register1">
+                    <br>
+                    Name: <input type="text" id="UserName" name="Name" style="font-size:medium" required /> <input type="button" id="b1" value="Check" /><br />
+                    <div id="result"></div>
+                    @Scripts.Render("~/bundles/jquery")
+                    <script>
+
+                        $(document).ready(function () {
+
+                            $('#checking').hide();
+
+                            $('#b1').click(function () {
+
+                                var userName = $('#UserName').val();
+
+                                //alert('User Name ='+ userName);
+                                $('#checking').show();
+                                $.getJSON("/Home/CheckUserName?Name=" + userName, function (data) {
+                                    $('#checking').hide();
+                                    if (data) {
+                                        $('#result').text("User already exists. Enter some other username. ");
+
+                                    }
+                                    else {
+                                        $('#result').text("User Name is available");
+                                    }
+                                });
+
+                            });
+
+                        });
+                    </script>
+
+                    Email id: <input type="email" id="email" name="Email" style="font-size:medium" autocomplete="on" required /> <br />
+                    Password: <input type="password" name="Password" style="font-size:medium" required /> <br />
+                    Confirm Password: <input type="password" name="ConfirmPassword" style="font-size:medium" required /> <br />
+                    <input type="submit" value="Register" />
+                </form>
+                
+</div>
+
+</body>

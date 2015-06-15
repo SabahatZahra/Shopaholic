@@ -1,0 +1,38 @@
+﻿@using Shopaholics.Models
+
+@{
+    ViewBag.Title = "Customers";
+    Layout = "~/Views/Shared/Layout1.cshtml";
+}
+
+<h2>Customers</h2>
+
+<body>
+    <div id="section">
+
+        <table>
+
+            <tr>
+                <td>CustomerId </td>
+                <td>CustomerName </td>
+                <td>CustomerEmail</td>
+                <td>CustomerPassword</td>
+            </tr>
+            @foreach (var i in Model)
+            {
+
+                <tr>
+                    <td>@i.Id.ToString() </td>
+                    <td>@i.Name </td>
+                    <td>@i.Email </td>
+                    <td>@i.Password </td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+
+
+
+</body>

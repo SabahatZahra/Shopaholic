@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Order";
+Layout = "~/Views/Shared/Layout1.cshtml";
+}
+
+@using Shopaholics.Models
+
+
+<body>
+    <div id="section">
+
+        <table>
+
+            <tr>
+                <td>CustomerId </td>
+                <td>ItemId </td>
+                <td>OrderId </td>
+                <td>Quantity </td>
+                <td>OrderDate </td>
+            </tr>
+    @foreach(var i in Model)
+    { 
+
+            <tr>
+                <td>@i.CustId.ToString() </td>
+                <td>@i.ItemId.ToString() </td>
+                <td>@i.Id.ToString() </td>
+                <td>@i.Quantity </td>
+                <td>@i.Date  </td>
+            </tr>
+    }
+
+        </table>
+
+    </div>
+
+
+
+</body>

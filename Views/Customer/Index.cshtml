@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Shopaholics.Models
+
+<body>
+    <div class="row">
+        <div class="col-xs-6">
+            <form action="../Customer/Order"  method=post>
+
+                <input type="hidden"  name="ItemId" value="@Model.Id" />
+                <br />
+                <br />
+
+                Name <input type="text" placeholder="Full Name" name="Name" required />
+                <br />
+                <br />
+
+                Email <input type="email" placeholder="Email" name="Email" required />
+                <br />
+                <br />
+
+                Address<input type="text" placeholder="Address" name="Address" required />
+                <br />
+                <br />
+
+                Country <input type="text" placeholder="Country" name="Country" required />
+                <br />
+                <br />
+
+                Region <input type="text" placeholder="Region" name="Region" required />
+                <br />
+                <br />
+
+                Payment Method
+                <br />
+
+                <select name="PaymentMethod">
+                    <option id="PaymentMethod">cash on delivery</option>
+                    <option id="PaymentMethod">online banking</option>
+
+                </select>
+                <br />
+                <br />
+
+
+
+
+                <input type="submit" value="Place Order" />
+
+            </form>
+
+            <br />
+            <br />
+            <form method="get" action="../Home/Index">
+                <input type="submit" value="Cancel" />
+
+            </form>
+    </div>
+        </div>
+
+</body>
+

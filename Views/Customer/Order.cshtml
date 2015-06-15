@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Order";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Shopaholics.Models
+
+<body>
+    <h2> Order</h2>
+    <p style="text-align: center;">
+        <span style="line-height: 1.3em;">
+            You Ordered Item @ViewBag.Item.Description of Rs. @ViewBag.Item.Price 
+        </span>
+    </p>
+
+    <div class="row">
+        <div class="col-xs-6">
+            <form method=post action="../Customer/Order1">
+
+                <input type="hidden" name="CustId" value="@ViewBag.Order.CustId" />
+                <input type="hidden" name="ItemId" value="@ViewBag.Order.ItemId" />
+                <input type="hidden" name="Date" value="@ViewBag.Order.Date" />
+
+                Quantity
+                <br />
+
+                <span class="rangeTo">
+                    <input lang="en" class="ui-inputText fss" type="number" name="Quantity" maxlength="2" value="1">
+                    <span class="measure-right">Rs.</span>
+                </span>
+                <input type="hidden" name="Stock" value="@ViewBag.Stock" />
+                <br />
+                <br />
+
+                <br />
+                <br />
+
+                <input type="submit" value="Confirm Order" />
+            </form>
+
+          
+            </div>
+        </div>
+
+
+</body>

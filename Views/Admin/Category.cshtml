@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Category";
+    Layout = "~/Views/Shared/Layout1.cshtml";
+}
+
+<h2>Add new Category</h2>
+<div id="nav">
+    <form method=GET action="../Admin/Cat">
+        <br>
+        <input type="hidden" name="Id" />
+       
+        Category Name: <input type="text" name="Name"  style="font-size:medium" required /> <br />
+        
+        <input type="submit" value="Add" />
+    </form>
+</div>

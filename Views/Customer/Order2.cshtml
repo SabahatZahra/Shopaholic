@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Order2";
+}
+
+@using Shopaholics.Models
+
+<body>
+    <h2> Order</h2>
+    <p style="text-align: center;">
+        <span style="line-height: 1.3em;">
+            Sorry! Your ordered quantity is more than the stock present. Please reselect the quantity or visit later for more items. 
+        </span>
+    </p>
+
+    <div class="row">
+        <div class="col-xs-6">
+            <form method=post action="../Customer/Order1">
+
+                Quantity
+                <br />
+
+                <span class="rangeTo">
+                    <input lang="en" class="ui-inputText fss" type="number" name="Quantity" maxlength="2" value="1">
+                    <span class="measure-right">Rs.</span>
+                </span>
+                <input type="hidden" name="Stock" value="@ViewBag.Stock" />
+                <br />
+                <br />
+
+                <br />
+                <br />
+
+                <input type="submit" value="Confirm Order" />
+            </form>
+
+
+        </div>
+    </div>
+
+
+</body>
