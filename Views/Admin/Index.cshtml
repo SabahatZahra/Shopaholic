@@ -56,7 +56,7 @@
                                 <a href="#" name="@i.Name"> @i.Name <span class="fa arrow"></span></a>
                                 <ul class="nav nav-third-level">
                                     <li>
-                                        <a href="../Home/Category">View Items</a>
+                                        <a href='@Url.Action("Category1", "Admin", new { CategoryName=@i.Name } )'>View Items</a>
                                     </li>
                                     <li>
                                         <a href="../Admin/Add">Add Items</a>
