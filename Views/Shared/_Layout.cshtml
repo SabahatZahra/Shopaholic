@@ -6,21 +6,42 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Content/lib/jquery-1.10.1.min.js"></script>
+    <link href="~/Content/source/helpers/jquery.fancybox-buttons.css" rel="stylesheet" />
+    <link href="~/Content/source/jquery.fancybox.css" rel="stylesheet" />
+    <script src="~/Content/source/jquery.fancybox.js"></script>
+    <script src="~/Content/lib/jquery-1.9.0.min.js"></script>
+    <script src="~/Content/source/jquery.fancybox.pack.js"></script>
+    <script src="~/Content/source/helpers/jquery.fancybox-media.js"></script>
+    <script src="~/Content/source/helpers/jquery.fancybox-thumbs.js"></script>
+    <link href="~/Content/source/helpers/jquery.fancybox-thumbs.css" rel="stylesheet" />
+    <script src="~/Content/source/helpers/jquery.fancybox-buttons.js"></script>
+    <script src="~/Content/lib/jquery.mousewheel-3.0.6.pack.js"></script>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <script src="~/Scripts/bootstrap.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-    
-    <style>
-        #header {
-            background-color:peachpuff;
-            color: maroon;
-            text-align: center;
-            padding: 5px;
-        }
+    <script type="text/javascript">
+        $(document).ready(function() {
+            /*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+            $('.fancybox').fancybox();
+        })
+     </script>
+
+
+            <style>
+                #header {
+                    background-color:peachpuff;
+                    color: maroon;
+                    text-align: center;
+                    padding: 5px;
+                }
 
         #nav {
             line-height: 30px;
@@ -45,88 +66,88 @@
 
 
         #section {
-            width: 800px;
-            height:400px;
-            color: maroon;
-            padding: 10px;
+                width: 800px;
+                height:400px;
+                color: maroon;
+                padding: 10px;
         }
 
 
 
-        h2 {
-            font-family: mistral;
-            font-size: 300%;
-        }
+            h2 {
+                font-family: mistral;
+                font-size: 300%;
+            }
 
-        h4 {
-            font-family: mistral;
-            font-size: 200%;
-        }
+            h4 {
+                font-family: mistral;
+                font-size: 200%;
+            }
 
-        a:link {
-            color: black;
-            background-color: transparent;
-            text-decoration: none;
-        }
+            a:link {
+                color: black;
+                background-color: transparent;
+                text-decoration: none;
+            }
 
-        a:visited {
-            color: black;
-            background-color: transparent;
-            text-decoration: none;
-        }
+            a:visited {
+                color: black;
+                background-color: transparent;
+                text-decoration: none;
+            }
 
-        a:hover {
-            color: black;
-            background-color: transparent;
-            text-decoration: none;
-        }
-    </style>
+            a:hover {
+                color: black;
+                background-color: transparent;
+                text-decoration: none;
+            }
+            </style>
 
-</head>
+        </head>
 
-<body>
+        <body>
 
 
-        @Scripts.Render("~/bundles/jquery")
-        @RenderSection("scripts", required: false)
+            @Scripts.Render("~/bundles/jquery")
+            @RenderSection("scripts", required: false)
 
-        <nav class="navbar navbar-inverse" role="navigation">
-            <div class="navbar-header" style="background-color: honeydew; color: darkslateblue;">
-                <a class=" navbar-brand" href="#">
-                Shopaholics.pk </a>
+                <nav class="navbar navbar-inverse" role="navigation">
+                    <div class="navbar-header" style="background-color: honeydew; color: darkslateblue;">
+                        <a class=" navbar-brand" href="#">
+                        Shopaholics.pk </a>
+                    </div>
+                    <div style="background-color:coral; color:darkslateblue;" >
+                        <ul class="nav navbar-nav pull-left">
+                            <li> <a href="../Home/Login" type="new">Admin</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav pull-right">
+
+                            <li> <a href="../Home/Index" type="new">Home</a></li>
+                            <li> <a href="../Home/Services" type="new">Services</a></li>
+                            <li> <a href="../Home/About" type="new">About Us</a></li>
+                            <li> <a href="../Home/Contact" type="new">Contact Us</a></li>
+                        </ul>
+
+                    </div>
+                </nav>
+
+                <div id="header">
+                    <ul class="nav navbar-nav pull-left">
+                        <li style="background-color:peachpuff ; color:black ; font-family:'Californian FB'; font-size:medium;"> <a href="../Home/Register" type="new">Register</a></li>
+
+                        <li style="background-color:peachpuff ; color:black ; font-family:'Californian FB'; font-size:medium;"> <a href="../Home/SignIn1" type="new">SignIn</a></li>
+                    </ul>
+                    <h2>Welcome Shopaholics!</h2>
+
+                </div>
+
+            @RenderBody()
+
+            <div class="navbar-fixed-bottom" >
+                <footer style="background-color: peachpuff; color: maroon; text-align: end; padding: 5px;">
+                    Customer Service 0321-4166664 | 0321-4577778 | Copyright © 2015 shopaholics.pk. All Rights Reserved.
+                </footer>
             </div>
-            <div style="background-color:coral; color:darkslateblue;" >
-                <ul class="nav navbar-nav pull-left">
-                    <li> <a href="../Home/Login" type="new">Admin</a></li>
-                </ul>
-                <ul class="nav navbar-nav pull-right">
 
-                    <li> <a href="../Home/Index" type="new">Home</a></li>
-                    <li> <a href="../Home/Services" type="new">Services</a></li>
-                    <li> <a href="../Home/About" type="new">About Us</a></li>
-                    <li> <a href="../Home/Contact" type="new">Contact Us</a></li>
-                </ul>
-
-            </div>
-        </nav>
-
-        <div id="header">
-            <ul class="nav navbar-nav pull-left">
-                <li style="background-color:peachpuff ; color:black ; font-family:'Californian FB'; font-size:medium;"> <a href="../Home/Register" type="new">Register</a></li>
-
-                <li style="background-color:peachpuff ; color:black ; font-family:'Californian FB'; font-size:medium;"> <a href="../Home/SignIn1" type="new">SignIn</a></li>
-            </ul>
-            <h2>Welcome Shopaholics!</h2>
-        
-        </div>
-
-        @RenderBody()
-
-    <div class="navbar-fixed-bottom" >
-        <footer style="background-color: peachpuff; color: maroon; text-align: end; padding: 5px;">
-            Customer Service 0321-4166664 | 0321-4577778 | Copyright © 2015 shopaholics.pk. All Rights Reserved.
-        </footer>
-    </div>
-
-    </body>
+            </body>
 </html>
