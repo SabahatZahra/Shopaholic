@@ -41,6 +41,9 @@
                 <div>
                     <p class="navbar-text">Rs @i.Price | Stock: @i.Stock</p>
                 </div>
+                <div>
+                    <p class="navbar-text">@i.Description</p>
+                </div>
                 <div class="desc">
                     <a href='@Url.Action("Index", "Customer", new { ItemId= @i.Id } )'>
                         <button type="button" class="btn btn-default btn-lg">
